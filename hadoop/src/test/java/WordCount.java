@@ -58,7 +58,7 @@ public class WordCount {
         return dir.delete();
     }
     public static void main(String[] args) throws Exception {
-        File outputFile=new File("E:/WORK_SPACE/example/output");
+        File outputFile=new File("E:/WORK_SPACE/example/hadoop/output");
         deleteDir(outputFile);
         JobConf conf = new JobConf(WordCount.class);
         String[] path = new String[2];
