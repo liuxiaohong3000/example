@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
 public class WordCount {
 
     public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
-        private final static IntWritable one = new IntWritable(1);
+        private final static IntWritable one = new IntWritable(2);
         private Text word = new Text();
 
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter)
@@ -76,6 +76,7 @@ public class WordCount {
         conf.setReducerClass(Reduce.class);
         conf.setInputFormat(TextInputFormat.class);
         conf.setOutputFormat(TextOutputFormat.class);
+        conf.setCompressMapOutput(true);
         FileInputFormat.setInputPaths(conf, new Path(otherArgs[0]));
         FileOutputFormat.setOutputPath(conf, new Path(otherArgs[1]));
         JobClient.runJob(conf);

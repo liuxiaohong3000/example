@@ -11,11 +11,11 @@
         <module name="storm" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="example" target="1.5" />
-      <module name="hadoop" target="1.5" />
-      <module name="spark" target="1.5" />
-      <module name="storm" target="1.5" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="example" target="1.7" />
+      <module name="hadoop" target="1.7" />
+      <module name="spark" target="1.7" />
+      <module name="storm" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
